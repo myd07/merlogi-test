@@ -4,7 +4,7 @@ import type { RootState } from "../index";
 
 const getCollection = (state: RootState) => state.character.collections;
 
-const useDataModel = () => {
+const useCharacterDataModel = () => {
   const collections = useSelector(getCollection);
 
   return {
@@ -12,4 +12,4 @@ const useDataModel = () => {
   };
 };
 
-export default useDataModel;
+export default useCharacterDataModel;
