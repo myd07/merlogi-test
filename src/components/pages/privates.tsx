@@ -8,7 +8,11 @@ const Privates = () => {
   return (
     <>
       <Routes>
-        <Route key="not-found" path="*" element={<div>Page not found</div>} />
+        <Route
+          key="not-found"
+          path="*"
+          element={<div>Page not found, back to homepage to login</div>}
+        />
         {[HomeConfig, MovieListConfig, CharacterListConfig].map(
           ({ key, path, component }) => (
             <Route key={key} path={path} element={component} />
