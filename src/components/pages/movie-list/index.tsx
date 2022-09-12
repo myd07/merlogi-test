@@ -20,7 +20,11 @@ const MovieListPage = () => {
   return (
     <Wrapper>
       {collection.map((movie: Movie) => (
-        <Link key={movie.id} to={generatePath({ name: "CharacterDetail" })}>
+        <Link
+          key={movie.id}
+          to={generatePath({ name: "CharacterList" })}
+          state={movie.people}
+        >
           <Card img={movie.movie_banner} title={movie.original_title} />
         </Link>
       ))}

@@ -1,20 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
+import { Character } from "src/domains/character";
+
 interface State {
-  collections: any[];
+  collection: Character[];
 }
 
 const initialState: State = {
-  collections: [],
+  collection: [],
 };
 
 export const slice = createSlice({
   name: "character",
   initialState,
   reducers: {
-    setCollections: (state, action: PayloadAction<any[]>) => {
-      state.collections = action.payload;
+    setCollection: (state, action: PayloadAction<Character[]>) => {
+      state.collection = action.payload;
+    },
+    setCollectionFromId: (
+      state,
+      action: PayloadAction<Character> & PayloadAction<Character[]>
+    ) => {
+      if (action.payload.length > 0) {
+        state.collection = action.payload;
+      } else {
+        state.collection = [...state.collection, action.payload];
+      }
     },
   },
 });

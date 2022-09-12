@@ -1,14 +1,16 @@
 import { useSelector } from "react-redux";
 
+import { Character } from "src/domains/character";
+
 import type { RootState } from "../index";
 
-const getCollection = (state: RootState) => state.character.collections;
+const getCollection = (state: RootState) => state.character.collection;
 
 const useCharacterDataModel = () => {
-  const collections = useSelector(getCollection);
+  const collection: Character[] = useSelector(getCollection);
 
   return {
-    collections,
+    collection,
   };
 };
 

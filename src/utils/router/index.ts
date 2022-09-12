@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-type Name = "MovieList" | "CharacterDetail";
+type Name = "MovieList" | "CharacterList";
 
 interface Params {
   name?: Name;
@@ -13,7 +13,7 @@ export const generatePath = ({ name }: Params): string => {
     case "MovieList":
       url = "/movie";
       break;
-    case "CharacterDetail":
+    case "CharacterList":
       url = "/movie/character";
       break;
     default:
