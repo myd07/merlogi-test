@@ -4,7 +4,7 @@ import "normalize.css";
 
 import store from "src/redux";
 
-import Pages from "./pages/login";
+import Pages from "./pages";
 
 export default function App() {
   return (

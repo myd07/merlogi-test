@@ -1,5 +1,11 @@
 import cookie from "js-cookie";
 
+interface CookieConfig {
+  expires: number;
+  secure: boolean;
+  sameSite: "strict" | "lax";
+}
+
 const sessionConfig = {
   key: "__session",
   cookieConfig: {
@@ -11,7 +17,11 @@ const sessionConfig = {
 };
 
 export const saveSession = (value: string) => {
-  cookie.set(sessionConfig.key, value);
+  cookie.set(
+    sessionConfig.key,
+    value,
+    sessionConfig.cookieConfig as CookieConfig
+  );
 };
 
 export const getSession = () => cookie.get(sessionConfig.key);
