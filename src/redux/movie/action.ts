@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-// [NOTE]: should use interceptors but have no time
-import axios from "axios";
+
+import axios from "src/utils/axios";
 
 import { movieActions } from "./slice";
 
