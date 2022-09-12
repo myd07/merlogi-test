@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Movie } from "src/domains/movie";
+import Card from "src/components/atoms/card";
 
+import { Movie } from "src/domains/movie";
 import useMovieAction from "src/redux/movie/action";
 import useMovieDataModel from "src/redux/movie/data";
 import { generatePath } from "src/utils/router";
+
+import { Wrapper } from "./style";
 
 const MovieListPage = () => {
   const { requestCollection } = useMovieAction();
@@ -15,15 +18,13 @@ const MovieListPage = () => {
   }, []);
 
   return (
-    <>
+    <Wrapper>
       {collection.map((movie: Movie) => (
-        <div>
-          <Link key={movie.id} to={generatePath({ name: "CharacterDetail" })}>
-            {movie.title}
-          </Link>
-        </div>
+        <Link key={movie.id} to={generatePath({ name: "CharacterDetail" })}>
+          <Card img={movie.movie_banner} title={movie.original_title} />
+        </Link>
       ))}
-    </>
+    </Wrapper>
   );
 };
 

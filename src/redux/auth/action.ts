@@ -14,7 +14,6 @@ const useAuthAction = () => {
   const dispatch = useDispatch();
 
   const login = () => {
-    console.log("lol");
     if (getSession()) {
       dispatch(authActions.login());
     }
