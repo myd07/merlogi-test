@@ -9,7 +9,7 @@ interface Props {
 
 const Card = ({ img, title }: Props) => {
   return (
-    <Wrapper>
+    <Wrapper data-testid="card">
       <img src={img} alt={title} />
       <span>{title}</span>
     </Wrapper>
