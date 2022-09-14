@@ -24,6 +24,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Unit Testing
+### `npm run test`
 
-Unit testing is not yet available in this repo. It will be updated at 14 September 2022.
+Runs the unit test. This repo contain unit test for all UI components
