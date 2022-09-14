@@ -33,7 +33,7 @@ const CharacterPage = () => {
   }, [state]);
 
   return (
-    <Wrapper>
+    <Wrapper data-testid="character-list">
       {!canRender && (
         <div>no state detected, please go to films page first</div>
       )}
