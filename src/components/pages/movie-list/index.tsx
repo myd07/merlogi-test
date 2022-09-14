@@ -18,7 +18,7 @@ const MovieListPage = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper data-testid="movie-list">
       {collection.map((movie: Movie) => (
         <Link
           key={movie.id}
