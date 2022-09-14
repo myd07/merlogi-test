@@ -16,7 +16,7 @@ const Component = (
   </Provider>
 );
 
-const mockResponse: Character[] = [
+const mockResponse = [
   {
     id: "1",
     name: "satu",
