@@ -32,20 +32,24 @@ const LoginPage = () => {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper data-testid="login">
         <form className="login_form" onSubmit={onSubmit}>
           <p>Welcome</p>
           <input
+            data-testid="username"
             type="text"
             name="username"
             placeholder="username"
             onChange={onChange}
+            value={state.username}
           />
           <input
+            data-testid="password"
             type="password"
             name="password"
             placeholder="password"
             onChange={onChange}
+            value={state.password}
           />
           <button type="submit">login</button>
         </form>
