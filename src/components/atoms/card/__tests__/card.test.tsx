@@ -12,7 +12,7 @@ describe("Card Component Test Group", () => {
   // 1. Component Mount
   it("1. Component Mount", async () => {
     render(Component);
-    const card = await screen.findByTestId("card");
+    const card = screen.queryByTestId("card");
     expect(card).toBeTruthy();
   });
   // 2. Card Title
